@@ -1,151 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<search> 
-  
-    
-    <entry>
-      <title><![CDATA[为什么要建博客]]></title>
-      <url>/Why.html</url>
-      <content type="html"><![CDATA[<h2 id="碎片化时间整理和利用"><a href="#碎片化时间整理和利用" class="headerlink" title="碎片化时间整理和利用"></a>碎片化时间整理和利用</h2><ul>
-<li>做网络运维这行业，碎片时间很多，但几乎没有利用起来。</li>
-<li>平时也喜欢研究一些技术，总是发现明明自己实现过的技术还要去翻技术文档，从头再去做研究，甚至重复造轮子。这样对碎片时间造成了严重浪费。</li>
-<li>做一个博客可以避免以后涉及到某个知识再去寻找技术文档的麻烦。</li>
-<li>以前学习一个新的技术点，喜欢在浏览器里收藏一堆教程，但真正自己写的时候还是非常陌生，又要重新去读一遍，典型的<strong>“眼高手低”</strong>，很多东西还是需要自己去实践，只有这样，才能把这些变成自己的东西(这句话是抄的)</li>
-<li>心态上，记录下来自己的想法不是为了炫耀，受益的是自己</li>
-</ul>
-<h2 id="为什么使用Hexo驱动"><a href="#为什么使用Hexo驱动" class="headerlink" title="为什么使用Hexo驱动"></a>为什么使用Hexo驱动</h2><p>觉得这玩意比较优雅，比较流行。</p>
-<h2 id="建博客想法"><a href="#建博客想法" class="headerlink" title="建博客想法"></a>建博客想法</h2><p>想记录自己试验中的想法和灵感，为以后的我提供所不及的思维历程。</p>
-]]></content>
-      
-        
-    </entry>
-    
-    <entry>
-      <title><![CDATA[Lychee开源图床搭建]]></title>
-      <url>/Lychee.html</url>
-      <content type="html"><![CDATA[<p>哎呀，博客想存图，咋办呢。强迫症，用别人的不放心，干脆自己搭建一个吧</p>
-<p>一款开源的图片管理系统，实际上可以当图床用，计划中</p>
-<p><a href="https://github.com/electerious/Lychee" target="_blank" rel="noopener">https://github.com/electerious/Lychee</a></p>
-<h2 id="更新问题"><a href="#更新问题" class="headerlink" title="更新问题"></a>更新问题</h2><p>什么？你问我什么时候更新？这是一个好问题</p>
-]]></content>
-      
-        
-        <tags>
-            
-            <tag> Lychee </tag>
-            
-            <tag> 图床 </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
-      <title><![CDATA[CentOS 7系统搭建Shadowsocks-libev服务器，兼容绝地求生，愉快吃鸡]]></title>
-      <url>/Shadowsocks.html</url>
-      <content type="html"><![CDATA[<p>最近吃鸡很火啊，现象级游戏真是可怕，社会社会。不过想要吃鸡呢，得有个好的加速器，现在市面上的加速器个个收费，不然就是绑定各种流氓，像某管家、某60。真是怀念几年前的时光，加速器个个免费，代理一搜一大把，用个花刺畅游世界，还能顺路刷个钻-.-。</p>
-<p>扯远了，加速器收费，价格不低，免费的体验差又不想用，干脆自己搭建一个。</p>
-<h2 id="安装Shadowsocks-libev"><a href="#安装Shadowsocks-libev" class="headerlink" title="安装Shadowsocks-libev"></a>安装Shadowsocks-libev</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">yum install epel-release yum-plugin-copr</span><br><span class="line">yum copr enable librehat/shadowsocks</span><br><span class="line">yum update</span><br><span class="line">yum install shadowsocks-libev</span><br></pre></td></tr></table></figure>
-<h2 id="配置Shadowsocks-libev"><a href="#配置Shadowsocks-libev" class="headerlink" title="配置Shadowsocks-libev"></a>配置Shadowsocks-libev</h2><p>创建配置文件，例：/etc/shadowsocks-libev/hk.json</p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"server"</span>:<span class="string">"my_server_ip"</span>,</span><br><span class="line">    <span class="attr">"server_port"</span>:<span class="number">8388</span>,</span><br><span class="line">    <span class="attr">"password"</span>:<span class="string">"123456"</span>,</span><br><span class="line">    <span class="attr">"timeout"</span>:<span class="number">300</span>,</span><br><span class="line">    <span class="attr">"method"</span>:<span class="string">"chacha20-ietf-poly1305"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>json文件注解：</p>
-<ul>
-<li>server    服务器地址，这里要改成自己服务器的ip或者域名</li>
-<li>server_port    Shadowsocks服务器端口，这里要和防火墙放通的端口一致</li>
-<li>password    Shadowsocks密码</li>
-<li>timeout    超时时间</li>
-<li>method    加密方式，默认：“aes-256-cfb”</li>
-</ul>
-<p>附官方注解：</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Explanation</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>server</td>
-<td>the address your server listens</td>
-</tr>
-<tr>
-<td>server_port</td>
-<td>server port</td>
-</tr>
-<tr>
-<td>local_address</td>
-<td>the address your local listens</td>
-</tr>
-<tr>
-<td>local_port</td>
-<td>local port</td>
-</tr>
-<tr>
-<td>password</td>
-<td>password used for encryption</td>
-</tr>
-<tr>
-<td>timeout</td>
-<td>in seconds</td>
-</tr>
-<tr>
-<td>method</td>
-<td>default: “aes-256-cfb”, see <a href="https://github.com/shadowsocks/shadowsocks/wiki/Encryption" target="_blank" rel="noopener">Encryption</a></td>
-</tr>
-<tr>
-<td>fast_open</td>
-<td>use <a href="https://github.com/shadowsocks/shadowsocks/wiki/TCP-Fast-Open" target="_blank" rel="noopener">TCP_FASTOPEN</a>, true / false</td>
-</tr>
-<tr>
-<td>workers</td>
-<td>number of workers, available on Unix/Linux</td>
-</tr>
-</tbody>
-</table>
-<h2 id="配置以systemctl服务方式启动"><a href="#配置以systemctl服务方式启动" class="headerlink" title="配置以systemctl服务方式启动"></a>配置以systemctl服务方式启动</h2><p>新建启动服务文件</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">/etc/systemd/system/shadowsocks.service</span><br><span class="line">或</span><br><span class="line">/usr/lib/systemd/system/shadowsocks.service</span><br></pre></td></tr></table></figure>
-<p>内容如下：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">[Unit]</span><br><span class="line">Description=ShadowSocks</span><br><span class="line">After=syslog.target network.target auditd.service</span><br><span class="line"></span><br><span class="line">[Service]</span><br><span class="line">Type=simple</span><br><span class="line">User=nobody</span><br><span class="line">ExecStart=/usr/bin/ss-server -c /etc/shadowsocks/hk.json -u</span><br><span class="line">ExecReload=/bin/kill -HUP $MAINPID</span><br><span class="line">ExecStop=/bin/kill -s QUIT $MAINPID</span><br><span class="line">PrivateTmp=true</span><br><span class="line">KillMode=process</span><br><span class="line">Restart=on-failure</span><br><span class="line">RestartSec=5s</span><br><span class="line"></span><br><span class="line">[Install]</span><br><span class="line">WantedBy=multi-user.target</span><br></pre></td></tr></table></figure>
-<p><strong>注意</strong>：如果服务端口小于1024，则需要改为user=root</p>
-<p>ss-server 参数注解</p>
-<ul>
-<li>-c 指向配置文件路径</li>
-</ul>
-<ul>
-<li>-u 启用UDP中继。</li>
-<li>-U 启用UDP中继并禁用TCP中继。</li>
-</ul>
-<h2 id="防火墙设置"><a href="#防火墙设置" class="headerlink" title="防火墙设置"></a>防火墙设置</h2><p>如果开启了防火墙，需要放通Shadowsocks-libev端口</p>
-<p>例如，对于Firewall，执行：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --permanent --add-port=8388/tcp</span><br><span class="line">firewall-cmd --permanent --add-port=8388/udp</span><br><span class="line">firewall-cmd --reload</span><br></pre></td></tr></table></figure>
-<h2 id="加入开启启动，以及启动服务、查看状态"><a href="#加入开启启动，以及启动服务、查看状态" class="headerlink" title="加入开启启动，以及启动服务、查看状态"></a>加入开启启动，以及启动服务、查看状态</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">systemctl enable shadowsocks</span><br><span class="line">systemctl start shadowsocks</span><br><span class="line">systemctl status shadowsocks</span><br></pre></td></tr></table></figure>
-<h2 id="取消开启启动，以及停止服务"><a href="#取消开启启动，以及停止服务" class="headerlink" title="取消开启启动，以及停止服务"></a>取消开启启动，以及停止服务</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">systemctl disable shadowsocks</span><br><span class="line">systemctl stop shadowsocks</span><br></pre></td></tr></table></figure>
-<h2 id="测试效果"><a href="#测试效果" class="headerlink" title="测试效果"></a>测试效果</h2><p><img src="//atxiu.cn/Snipaste/Snipaste_2017-11-14_14-01-08.png" alt="Snipaste_2017-11-14_14-01-08"></p>
-<p>不说了，我送快递去了。</p>
-<h2 id="可选内容-锐速单边加速"><a href="#可选内容-锐速单边加速" class="headerlink" title="可选内容 (锐速单边加速)"></a>可选内容 (锐速单边加速)</h2><p>更换内核支持锐速</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rpm -ivh https://buildlogs.centos.org/c7.1511.00/kernel/20151119220809/3.10.0-327.el7.x86_64/kernel-3.10.0-327.el7.x86_64.rpm --force</span><br></pre></td></tr></table></figure>
-<p>安装</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -N --no-check-certificate https://github.com/91yun/serverspeeder/raw/master/serverspeeder.sh &amp;&amp; bash serverspeeder.sh</span><br></pre></td></tr></table></figure>]]></content>
-      
-        
-        <tags>
-            
-            <tag> Shadowsocks-libev </tag>
-            
-            <tag> Shadowsocks </tag>
-            
-            <tag> 吃鸡 </tag>
-            
-            <tag> Playerunknown&#39;s Battlegrounds </tag>
-            
-            <tag> 加速 </tag>
-            
-            <tag> PUBG </tag>
-            
-        </tags>
-        
-    </entry>
-    
-  
-  
+<search>
+  <entry>
+    <title><![CDATA[为什么要建博客]]></title>
+    <url>%2FWhy.html</url>
+    <content type="text"><![CDATA[碎片化时间整理和利用 做网络运维这行业，碎片时间很多，但几乎没有利用起来。 平时也喜欢研究一些技术，总是发现明明自己实现过的技术还要去翻技术文档，从头再去做研究，甚至重复造轮子。这样对碎片时间造成了严重浪费。 做一个博客可以避免以后涉及到某个知识再去寻找技术文档的麻烦。 以前学习一个新的技术点，喜欢在浏览器里收藏一堆教程，但真正自己写的时候还是非常陌生，又要重新去读一遍，典型的“眼高手低”，很多东西还是需要自己去实践，只有这样，才能把这些变成自己的东西(这句话是抄的) 心态上，记录下来自己的想法不是为了炫耀，受益的是自己 为什么使用Hexo驱动觉得这玩意比较优雅，比较流行。 建博客想法想记录自己试验中的想法和灵感，为以后的我提供所不及的思维历程。]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[Lychee开源图床搭建]]></title>
+    <url>%2FLychee.html</url>
+    <content type="text"><![CDATA[哎呀，博客想存图，咋办呢。强迫症，用别人的不放心，干脆自己搭建一个吧 一款开源的图片管理系统，实际上可以当图床用，计划中 https://github.com/electerious/Lychee 更新问题什么？你问我什么时候更新？这是一个好问题]]></content>
+      <tags>
+        <tag>Lychee</tag>
+        <tag>图床</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[CentOS 7系统搭建Shadowsocks-libev服务器，兼容绝地求生，愉快吃鸡]]></title>
+    <url>%2FShadowsocks.html</url>
+    <content type="text"><![CDATA[最近吃鸡很火啊，现象级游戏真是可怕，社会社会。不过想要吃鸡呢，得有个好的加速器，现在市面上的加速器个个收费，不然就是绑定各种流氓，像某管家、某60。真是怀念几年前的时光，加速器个个免费，代理一搜一大把，用个花刺畅游世界，还能顺路刷个钻-.-。 扯远了，加速器收费，价格不低，免费的体验差又不想用，干脆自己搭建一个。 安装Shadowsocks-libev1234yum install epel-release yum-plugin-copryum copr enable librehat/shadowsocksyum updateyum install shadowsocks-libev 配置Shadowsocks-libev创建配置文件，例：/etc/shadowsocks-libev/hk.json 1234567&#123; "server":"my_server_ip", "server_port":8388, "password":"123456", "timeout":300, "method":"chacha20-ietf-poly1305"&#125; json文件注解： server 服务器地址，这里要改成自己服务器的ip或者域名 server_port Shadowsocks服务器端口，这里要和防火墙放通的端口一致 password Shadowsocks密码 timeout 超时时间 method 加密方式，默认：“aes-256-cfb” 附官方注解： Name Explanation server the address your server listens server_port server port local_address the address your local listens local_port local port password password used for encryption timeout in seconds method default: “aes-256-cfb”, see Encryption fast_open use TCP_FASTOPEN, true / false workers number of workers, available on Unix/Linux 配置以systemctl服务方式启动新建启动服务文件 123/etc/systemd/system/shadowsocks.service或/usr/lib/systemd/system/shadowsocks.service 内容如下： 1234567891011121314151617[Unit]Description=ShadowSocksAfter=syslog.target network.target auditd.service[Service]Type=simpleUser=nobodyExecStart=/usr/bin/ss-server -c /etc/shadowsocks/hk.json -uExecReload=/bin/kill -HUP $MAINPIDExecStop=/bin/kill -s QUIT $MAINPIDPrivateTmp=trueKillMode=processRestart=on-failureRestartSec=5s[Install]WantedBy=multi-user.target 注意：如果服务端口小于1024，则需要改为user=root ss-server 参数注解 -c 指向配置文件路径 -u 启用UDP中继。 -U 启用UDP中继并禁用TCP中继。 防火墙设置如果开启了防火墙，需要放通Shadowsocks-libev端口 例如，对于Firewall，执行： 123firewall-cmd --permanent --add-port=8388/tcpfirewall-cmd --permanent --add-port=8388/udpfirewall-cmd --reload 加入开启启动，以及启动服务、查看状态123systemctl enable shadowsockssystemctl start shadowsockssystemctl status shadowsocks 取消开启启动，以及停止服务12systemctl disable shadowsockssystemctl stop shadowsocks 测试效果 不说了，我送快递去了。 可选内容 (锐速单边加速)更换内核支持锐速 1rpm -ivh https://buildlogs.centos.org/c7.1511.00/kernel/20151119220809/3.10.0-327.el7.x86_64/kernel-3.10.0-327.el7.x86_64.rpm --force 安装 1wget -N --no-check-certificate https://github.com/91yun/serverspeeder/raw/master/serverspeeder.sh &amp;&amp; bash serverspeeder.sh]]></content>
+      <tags>
+        <tag>Shadowsocks-libev</tag>
+        <tag>Shadowsocks</tag>
+        <tag>吃鸡</tag>
+        <tag>Playerunknown&#39;s Battlegrounds</tag>
+        <tag>加速</tag>
+        <tag>PUBG</tag>
+      </tags>
+  </entry>
 </search>
