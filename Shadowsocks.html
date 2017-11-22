@@ -79,19 +79,19 @@
 
 
 
-<meta name="description" content="最近吃鸡很火啊，现象级游戏真是可怕，社会社会。不过想要吃鸡呢，得有个好的加速器，现在市面上的加速器个个收费，不然就是绑定各种流氓，像某管家、某60。真是怀念几年前的时光，加速器个个免费，代理一搜一大把，用个花刺畅游世界，还能顺路刷个钻-.-。 扯远了，加速器收费，价格不低，免费的体验差又不想用，干脆自己搭建一个。 安装">
+<meta name="description" content="最近吃鸡很火啊，现象级游戏真是可怕，社会社会。不过想要吃鸡呢，得有个好的加速器，现在市面上的加速器个个收费，不然就是绑定各种流氓，像某管家、某60。真是怀念几年前的时光，加速器个个免费，代理一搜一大把，用个花刺畅游世界，还能顺路刷个钻-.-。 扯远了，加速器收费，价格不低，免费的体验差又不想用，干脆自己搭建一个。">
 <meta name="keywords" content="Shadowsocks-libev,Shadowsocks,吃鸡,Playerunknown&#39;s Battlegrounds,加速,PUBG">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CentOS 7系统搭建Shadowsocks-libev服务器，兼容绝地求生，愉快吃鸡">
 <meta property="og:url" content="atxiu.cn/Shadowsocks.html">
 <meta property="og:site_name" content="Anjoy博客">
-<meta property="og:description" content="最近吃鸡很火啊，现象级游戏真是可怕，社会社会。不过想要吃鸡呢，得有个好的加速器，现在市面上的加速器个个收费，不然就是绑定各种流氓，像某管家、某60。真是怀念几年前的时光，加速器个个免费，代理一搜一大把，用个花刺畅游世界，还能顺路刷个钻-.-。 扯远了，加速器收费，价格不低，免费的体验差又不想用，干脆自己搭建一个。 安装Shadowsocks-libev1234yum install epel-re">
+<meta property="og:description" content="最近吃鸡很火啊，现象级游戏真是可怕，社会社会。不过想要吃鸡呢，得有个好的加速器，现在市面上的加速器个个收费，不然就是绑定各种流氓，像某管家、某60。真是怀念几年前的时光，加速器个个免费，代理一搜一大把，用个花刺畅游世界，还能顺路刷个钻-.-。 扯远了，加速器收费，价格不低，免费的体验差又不想用，干脆自己搭建一个。">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="//atxiu.cn/Snipaste/Snipaste_2017-11-14_14-01-08.png">
-<meta property="og:updated_time" content="2017-11-21T13:21:01.795Z">
+<meta property="og:updated_time" content="2017-11-22T04:18:35.867Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CentOS 7系统搭建Shadowsocks-libev服务器，兼容绝地求生，愉快吃鸡">
-<meta name="twitter:description" content="最近吃鸡很火啊，现象级游戏真是可怕，社会社会。不过想要吃鸡呢，得有个好的加速器，现在市面上的加速器个个收费，不然就是绑定各种流氓，像某管家、某60。真是怀念几年前的时光，加速器个个免费，代理一搜一大把，用个花刺畅游世界，还能顺路刷个钻-.-。 扯远了，加速器收费，价格不低，免费的体验差又不想用，干脆自己搭建一个。 安装Shadowsocks-libev1234yum install epel-re">
+<meta name="twitter:description" content="最近吃鸡很火啊，现象级游戏真是可怕，社会社会。不过想要吃鸡呢，得有个好的加速器，现在市面上的加速器个个收费，不然就是绑定各种流氓，像某管家、某60。真是怀念几年前的时光，加速器个个免费，代理一搜一大把，用个花刺畅游世界，还能顺路刷个钻-.-。 扯远了，加速器收费，价格不低，免费的体验差又不想用，干脆自己搭建一个。">
 <meta name="twitter:image" content="//atxiu.cn/Snipaste/Snipaste_2017-11-14_14-01-08.png">
 
 
@@ -363,6 +363,7 @@
       
         <p>最近吃鸡很火啊，现象级游戏真是可怕，社会社会。不过想要吃鸡呢，得有个好的加速器，现在市面上的加速器个个收费，不然就是绑定各种流氓，像某管家、某60。真是怀念几年前的时光，加速器个个免费，代理一搜一大把，用个花刺畅游世界，还能顺路刷个钻-.-。</p>
 <p>扯远了，加速器收费，价格不低，免费的体验差又不想用，干脆自己搭建一个。</p>
+<a id="more"></a>
 <h2 id="安装Shadowsocks-libev"><a href="#安装Shadowsocks-libev" class="headerlink" title="安装Shadowsocks-libev"></a>安装Shadowsocks-libev</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">yum install epel-release yum-plugin-copr</span><br><span class="line">yum copr enable librehat/shadowsocks</span><br><span class="line">yum update</span><br><span class="line">yum install shadowsocks-libev</span><br></pre></td></tr></table></figure>
 <h2 id="配置Shadowsocks-libev"><a href="#配置Shadowsocks-libev" class="headerlink" title="配置Shadowsocks-libev"></a>配置Shadowsocks-libev</h2><p>创建配置文件，例：/etc/shadowsocks-libev/hk.json</p>
 <figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"server"</span>:<span class="string">"my_server_ip"</span>,</span><br><span class="line">    <span class="attr">"server_port"</span>:<span class="number">8388</span>,</span><br><span class="line">    <span class="attr">"password"</span>:<span class="string">"123456"</span>,</span><br><span class="line">    <span class="attr">"timeout"</span>:<span class="number">300</span>,</span><br><span class="line">    <span class="attr">"method"</span>:<span class="string">"chacha20-ietf-poly1305"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
