@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="碎片化时间整理和利用 做网络运维这行业，碎片时间很多，但几乎没有利用起来。 平时也喜欢研究一些技术，总是发现明明自己实现过的技术还要去翻技术文档，从头再去做研究，甚至重复造轮子。这样对碎片时间造成了严重浪费。 做一个博客可以避免以后涉及到某个知识再去寻找技术文档的麻烦。 以前学习一个新的技术点，喜欢在浏览器里收藏一堆教">
+<meta name="description" content="近日工作上有这样一个需求，某学校没有公网地址，但公司的业务对接需要公网地址的一个端口，要求是在不影响业务正常运行的情况下实现本次映射。对端对接地址是：10.0.0.2 提供了一台可操作服务器 10.0.0.3 ，本地我提供了可操作服务器：10.100.101.115，公网 nat 映射一应俱全。仔细思考过后，决定使用O">
 <meta property="og:type" content="article">
-<meta property="og:title" content="为什么要建博客">
-<meta property="og:url" content="http://atxiu.cn/Why.html">
+<meta property="og:title" content="OpenVPN搭建">
+<meta property="og:url" content="http://atxiu.cn/OpenVPN.html">
 <meta property="og:site_name" content="Anjoy博客">
-<meta property="og:description" content="碎片化时间整理和利用 做网络运维这行业，碎片时间很多，但几乎没有利用起来。 平时也喜欢研究一些技术，总是发现明明自己实现过的技术还要去翻技术文档，从头再去做研究，甚至重复造轮子。这样对碎片时间造成了严重浪费。 做一个博客可以避免以后涉及到某个知识再去寻找技术文档的麻烦。 以前学习一个新的技术点，喜欢在浏览器里收藏一堆教程，但真正自己写的时候还是非常陌生，又要重新去读一遍，典型的“眼高手低”，很多东">
+<meta property="og:description" content="近日工作上有这样一个需求，某学校没有公网地址，但公司的业务对接需要公网地址的一个端口，要求是在不影响业务正常运行的情况下实现本次映射。对端对接地址是：10.0.0.2 提供了一台可操作服务器 10.0.0.3 ，本地我提供了可操作服务器：10.100.101.115，公网 nat 映射一应俱全。仔细思考过后，决定使用OpenVPN。实现如下： 服务器端添加epel源1234yum install">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-11-22T04:18:34.876Z">
+<meta property="og:updated_time" content="2017-11-24T07:50:41.625Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="为什么要建博客">
-<meta name="twitter:description" content="碎片化时间整理和利用 做网络运维这行业，碎片时间很多，但几乎没有利用起来。 平时也喜欢研究一些技术，总是发现明明自己实现过的技术还要去翻技术文档，从头再去做研究，甚至重复造轮子。这样对碎片时间造成了严重浪费。 做一个博客可以避免以后涉及到某个知识再去寻找技术文档的麻烦。 以前学习一个新的技术点，喜欢在浏览器里收藏一堆教程，但真正自己写的时候还是非常陌生，又要重新去读一遍，典型的“眼高手低”，很多东">
+<meta name="twitter:title" content="OpenVPN搭建">
+<meta name="twitter:description" content="近日工作上有这样一个需求，某学校没有公网地址，但公司的业务对接需要公网地址的一个端口，要求是在不影响业务正常运行的情况下实现本次映射。对端对接地址是：10.0.0.2 提供了一台可操作服务器 10.0.0.3 ，本地我提供了可操作服务器：10.100.101.115，公网 nat 映射一应俱全。仔细思考过后，决定使用OpenVPN。实现如下： 服务器端添加epel源1234yum install">
 
 
 
@@ -119,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://atxiu.cn/Why.html"/>
+  <link rel="canonical" href="http://atxiu.cn/OpenVPN.html"/>
 
 
 
 
 
-  <title>为什么要建博客 | Anjoy博客</title>
+  <title>OpenVPN搭建 | Anjoy博客</title>
   
 
 
@@ -295,7 +295,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://atxiu.cn/Why.html">
+    <link itemprop="mainEntityOfPage" href="http://atxiu.cn/OpenVPN.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Anjoy">
@@ -312,7 +312,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">为什么要建博客</h1>
+          <h1 class="post-title" itemprop="name headline">OpenVPN搭建</h1>
         
 
         <div class="post-meta">
@@ -324,8 +324,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-22T10:29:56+08:00">
-                2017-11-22
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-23T15:25:13+08:00">
+                2017-11-23
               </time>
             
 
@@ -343,9 +343,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/Why.html#comments" itemprop="discussionUrl">
+                <a href="/OpenVPN.html#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="Why.html" itemprop="commentCount"></span>
+                        data-disqus-identifier="OpenVPN.html" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -378,17 +378,54 @@
       
 
       
-        <h2 id="碎片化时间整理和利用"><a href="#碎片化时间整理和利用" class="headerlink" title="碎片化时间整理和利用"></a>碎片化时间整理和利用</h2><ul>
-<li>做网络运维这行业，碎片时间很多，但几乎没有利用起来。</li>
-<li>平时也喜欢研究一些技术，总是发现明明自己实现过的技术还要去翻技术文档，从头再去做研究，甚至重复造轮子。这样对碎片时间造成了严重浪费。</li>
-<li>做一个博客可以避免以后涉及到某个知识再去寻找技术文档的麻烦。</li>
-<li>以前学习一个新的技术点，喜欢在浏览器里收藏一堆教程，但真正自己写的时候还是非常陌生，又要重新去读一遍，典型的<strong>“眼高手低”</strong>，很多东西还是需要自己去实践，只有这样，才能把这些变成自己的东西(这句话是抄的)</li>
-<li>心态上，记录下来自己的想法不是为了炫耀，受益的是自己</li>
+        <p>近日工作上有这样一个需求，某学校没有公网地址，但公司的业务对接需要公网地址的一个端口，要求是在不影响业务正常运行的情况下实现本次映射。对端对接地址是：10.0.0.2 提供了一台可操作服务器 10.0.0.3 ，本地我提供了可操作服务器：10.100.101.115，公网 nat 映射一应俱全。仔细思考过后，决定使用OpenVPN。实现如下：</p>
+<h2 id="服务器端"><a href="#服务器端" class="headerlink" title="服务器端"></a>服务器端</h2><h3 id="添加epel源"><a href="#添加epel源" class="headerlink" title="添加epel源"></a>添加epel源</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">yum install epel-release</span><br><span class="line">yum cleanall # 可选</span><br><span class="line">yum update # 可选</span><br><span class="line">yum makecache # 可选</span><br></pre></td></tr></table></figure>
+<h3 id="安装openvpn-easy-rsa-firewalld"><a href="#安装openvpn-easy-rsa-firewalld" class="headerlink" title="安装openvpn easy-rsa firewalld"></a>安装openvpn easy-rsa firewalld</h3><p>任选其一，以防火墙为基础的端口转发</p>
+<ul>
+<li>CentOS 6.5    iptables    #这里对端提供的服务器是 CentOS 6.5，不支持firewalld</li>
+<li>CentOS 7    firewalld    #本地服务器防火墙</li>
 </ul>
-<a id="more"></a>
-<h2 id="为什么使用Hexo驱动"><a href="#为什么使用Hexo驱动" class="headerlink" title="为什么使用Hexo驱动"></a>为什么使用Hexo驱动</h2><p>觉得这玩意比较优雅，比较流行。</p>
-<h2 id="建博客想法"><a href="#建博客想法" class="headerlink" title="建博客想法"></a>建博客想法</h2><p>想记录自己试验中的想法和灵感，为以后的我提供所不及的思维历程。</p>
-
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum -y install openvpn easy-rsa firewalld</span><br></pre></td></tr></table></figure>
+<h3 id="配置easy-rsa"><a href="#配置easy-rsa" class="headerlink" title="配置easy-rsa"></a>配置easy-rsa</h3><p>在这一步生成一些证书</p>
+<ul>
+<li>CA证书</li>
+<li>服务器证书和密钥</li>
+<li>Diffie-Hellman密钥</li>
+<li>客户端证书和密钥</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cp -r /usr/share/easy-rsa/ /etc/openvpn/</span><br><span class="line">cd /etc/openvpn/easy-rsa/2.*/</span><br><span class="line">vim vars</span><br></pre></td></tr></table></figure>
+<p>确保<code>vars</code>中以下参数正确</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">export KEY_SIZE=2048</span><br><span class="line">export CA_EXPIRE=3650</span><br><span class="line">export KEY_EXPIRE=3650</span><br><span class="line">export KEY_NAME=&quot;EasyRSA&quot;</span><br></pre></td></tr></table></figure>
+<h3 id="生成服务器证书密钥和客户端证书密钥"><a href="#生成服务器证书密钥和客户端证书密钥" class="headerlink" title="生成服务器证书密钥和客户端证书密钥"></a>生成服务器证书密钥和客户端证书密钥</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">source ./vars #初始化证书授权中心</span><br><span class="line">./clean-all</span><br><span class="line"># 生成证书</span><br><span class="line"># Name [EasyRSA] 那一项写ca</span><br><span class="line">./build-ca</span><br><span class="line"># 生成服务器密钥和证书</span><br><span class="line"># 在challenge password和optional company name处留空</span><br><span class="line"># Name [EasyRSA] 那一项写server</span><br><span class="line"># 两个y选项选择y</span><br><span class="line">./build-key-server server</span><br><span class="line">./build-dh</span><br><span class="line"># 生成客户端密钥和证书</span><br><span class="line"># 在challenge password和optional company name处留空</span><br><span class="line"># Name [EasyRSA] 那一项写client</span><br><span class="line"># 两个y选项选择y</span><br><span class="line">./build-key client</span><br><span class="line">cd /etc/openvpn/easy-rsa/2.0/</span><br><span class="line">cp -r keys/ /etc/openvpn/</span><br></pre></td></tr></table></figure>
+<h3 id="配置OpenVPN服务端"><a href="#配置OpenVPN服务端" class="headerlink" title="配置OpenVPN服务端"></a>配置OpenVPN服务端</h3><p>你可以从<code>/usr/share/doc/openvpn-*.*.*/sample/sample-config-files</code>中拷贝出配置文件(<em>.</em>.*是openvpn版本)，也可以自己新建配置文件，</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd /etc/openvpn/</span><br><span class="line">cp /usr/share/doc/openvpn-*.*.*/sample/sample-config-files/server.conf /etc/openvpn</span><br><span class="line">vim server.conf</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">local 0.0.0.0    #监听地址</span><br><span class="line">port 1194    #监听端口</span><br><span class="line">proto tcp    #监听协议</span><br><span class="line">dev tun    #采用路由隧道模式</span><br><span class="line">ca /etc/openvpn/keys/ca.crt    #证书路径</span><br><span class="line">cert /etc/openvpn/keys/server.crt    #服务器证书</span><br><span class="line">key /etc/openvpn/keys/server.key    #服务器密钥</span><br><span class="line">dh /etc/openvpn/keys/dh2048.pem     #密钥交换协议文件</span><br><span class="line">server 192.168.200.0 255.255.255.0    #给客户端分配地址池，注意：不能和VPN服务器内网网段有相同</span><br><span class="line">push &quot;route 10.100.101.115 255.255.255.255&quot;  #向客户端推送10.100.101.115并允许客户端访问10.100.101.115的地址</span><br><span class="line">;push&quot;dhcp-option DNS 8.8.8.8&quot;              #dhcp分配dns，可选</span><br><span class="line">client-to-client    #客户端之间互相通信</span><br><span class="line">keepalive 10 120    #存活时间，10秒ping一次,120 如未收到响应则视为断线</span><br><span class="line">cipher AES-256-CBC    #加密方式 参考Shadowsocks</span><br><span class="line">comp-lzo    #传输数据压缩</span><br><span class="line">max-clients 100    #最多允许 100 客户端连接</span><br><span class="line">user nobody  #用户</span><br><span class="line">group nobody  #用户组</span><br><span class="line">persist-key</span><br><span class="line">persist-tun</span><br><span class="line">reneg-sec 900    #可选，这里设置15分钟</span><br><span class="line">status    /var/log/openvpn/openvpn-status.log</span><br><span class="line">log    /var/log/openvpn/openvpn.log</span><br><span class="line">verb 3</span><br><span class="line">#OpenVPN在服务器和客户端都有一个参数 reneg-sec n，该参数是指n秒钟之后重新验证key。默认值为3600s，该参数值以服务器和客户端的最小reneg-sec为最终决定重新验证的时间。例如：如果服务器上设定了3000s，即使你客户端设置30000s，最终重新验证key值仍是3000s</span><br></pre></td></tr></table></figure>
+<p>设置允许IP转发，在<code>/etc/sysctl.conf</code>文件中添加一行<code>net.ipv4.ip_forward = 1</code><br><code>sysctl -p</code></p>
+<h3 id="配置firewalld端口转发"><a href="#配置firewalld端口转发" class="headerlink" title="配置firewalld端口转发"></a>配置firewalld端口转发</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">#启动防火墙</span><br><span class="line">systemctl start firewalld</span><br><span class="line">#添加OpenVPN连接用端口1194和映射用端口8080 下由注释</span><br><span class="line">firewall-cmd --permanent --zone=public --add-service=openvpn</span><br><span class="line">#由于我这边直接添加OpenVPN服务TCP端口起不来，所以再添加一条规则，上一条起作用了就不用配</span><br><span class="line">firewall-cmd --permanent --zone=public --add-port=1194/tcp</span><br><span class="line">firewall-cmd --permanent --zone=public --add-service=webcache</span><br><span class="line">#在防火墙上添加端口 8080，把本机 8080 端口收到的数据转发到 192.168.200.6 的 18080 端口</span><br><span class="line">firewall-cmd --permanent --zone=public --add-forward-port=port=8080:proto=tcp:toport=18080:toaddr=192.168.200.6</span><br></pre></td></tr></table></figure>
+<ul>
+<li>为什么这里添加1194和8080端口是写成openvpn和webcache，因为这两个服务的端口已经被写入linux系统了，映射服务名即可映射对应端口，便于识别，但也可以直接使用端口8080 2012 9090</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">cat /etc/services | grep 8080</span><br><span class="line">webcache        8080/tcp        http-alt        # WWW caching service</span><br><span class="line">webcache        8080/udp        http-alt        # WWW caching service</span><br><span class="line">cat /etc/services | grep openvpn</span><br><span class="line">openvpn         1194/tcp                # OpenVPN</span><br><span class="line">openvpn         1194/udp                # OpenVPN</span><br></pre></td></tr></table></figure>
+<ul>
+<li>直接使用端口,这样的好处是可以自定义端口，还可以指定通过的协议。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --permanent --zone=public --add-port=1194/tcp</span><br><span class="line">firewall-cmd --permanent --zone=public --add-port=8080/tcp</span><br></pre></td></tr></table></figure>
+<ul>
+<li>在不停止服务的情况下重新加载防火墙</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --reload</span><br></pre></td></tr></table></figure>
+<h3 id="查看防火墙配置"><a href="#查看防火墙配置" class="headerlink" title="查看防火墙配置"></a>查看防火墙配置</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">public</span><br><span class="line">  target: default</span><br><span class="line">  icmp-block-inversion: no</span><br><span class="line">  interfaces: </span><br><span class="line">  sources: </span><br><span class="line">  services: ssh dhcpv6-client dns openvpn webcache</span><br><span class="line">  ports: 1194/tcp</span><br><span class="line">  protocols: </span><br><span class="line">  masquerade: yes</span><br><span class="line">  forward-ports: port=8080:proto=tcp:toport=18080:toaddr=192.168.200.6</span><br><span class="line">  source-ports: </span><br><span class="line">  icmp-blocks: </span><br><span class="line">  rich rules:</span><br></pre></td></tr></table></figure>
+<h3 id="firewalld和OpenVPN开机启动"><a href="#firewalld和OpenVPN开机启动" class="headerlink" title="firewalld和OpenVPN开机启动"></a>firewalld和OpenVPN开机启动</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">##防火墙设置开机启动</span><br><span class="line">systemctl enable firewalld</span><br><span class="line">##服务端启动和开机启动</span><br><span class="line">systemctl start openvpn@server</span><br><span class="line">systemctl enable openvpn@server</span><br></pre></td></tr></table></figure>
+<h2 id="客户端设置"><a href="#客户端设置" class="headerlink" title="客户端设置"></a>客户端设置</h2><h3 id="安装openvpn-iptables"><a href="#安装openvpn-iptables" class="headerlink" title="安装openvpn iptables"></a>安装openvpn iptables</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install openvpn iptables nginx</span><br></pre></td></tr></table></figure>
+<h3 id="配置OpenVPN客户端"><a href="#配置OpenVPN客户端" class="headerlink" title="配置OpenVPN客户端"></a>配置OpenVPN客户端</h3><p>你可以从<code>/usr/share/doc/openvpn-*.*.*/sample/sample-config-files</code>中拷贝出配置文件(<em>.</em>.*是openvpn版本)，也可以自己新建配置文件，</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">cd /etc/openvpn/</span><br><span class="line">cp /usr/share/doc/openvpn-*.*.*/sample/sample-config-files/client.conf /etc/openvpn</span><br><span class="line">vim client.conf</span><br><span class="line">client</span><br><span class="line">dev tun</span><br><span class="line">proto tcp    #监听协议，和服务端一致</span><br><span class="line">remote my-server-2 1194    #这里是服务器映射出来的公网地址和端口</span><br><span class="line">nobind</span><br><span class="line">user nobody</span><br><span class="line">group nobody</span><br><span class="line">persist-key</span><br><span class="line">persist-tun</span><br><span class="line">ca /etc/openvpn/keys/ca.crt    #这里是从服务器拷过来的ca证书</span><br><span class="line">cert /etc/openvpn/keys/client.crt    #这里是从服务器拷过来的客户端证书</span><br><span class="line">key /etc/openvpn/keys/client.key    #这里是从服务器拷过来的客户端密钥</span><br><span class="line">cipher AES-256-CBC    #加密方式，和服务端一致</span><br><span class="line">reneg-sec 900    #可选，这里和服务器端一致</span><br><span class="line">comp-lzo    #传输数据压缩，和服务器端一致</span><br><span class="line">verb 3</span><br></pre></td></tr></table></figure>
+<ul>
+<li>拷贝服务器端的/etc/openvpn/easy-rsa/{ca.crt,client.crt,client.key}到客户端的主机 /etc/openvpn/keys/目录下，没有就新建一个</li>
+</ul>
+<h3 id="客户端做反向代理"><a href="#客户端做反向代理" class="headerlink" title="客户端做反向代理"></a>客户端做反向代理</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">yum install </span><br><span class="line">vim /etc/nginx/conf.d/default.conf</span><br><span class="line">server &#123;</span><br><span class="line">    // 当通过 10.0.0.3:18080 端口访问这个服务器时</span><br><span class="line">    // 该请求会被转发到 10.0.0.2:8080</span><br><span class="line">    listen       18080 ;</span><br><span class="line">    location / &#123;</span><br><span class="line">            //物理机能访问到的web服务都可以做代理</span><br><span class="line">            //客户端反向代理端口要和服务端出口映射端口一致，不然无法登录</span><br><span class="line">            proxy_pass  http://10.0.0.2:8080;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="配置iptables端口转发"><a href="#配置iptables端口转发" class="headerlink" title="配置iptables端口转发"></a>配置iptables端口转发</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">service iptables start</span><br><span class="line">#将外网访问 192.168.200.6 的 18080 端口转发到 10.0.0.3:18080 端口。</span><br><span class="line">iptables -t nat -A PREROUTING -d 192.168.200.6 -p tcp --dport 18080 -j DNAT --to-destination 10.0.0.3:18080</span><br><span class="line">#将 10.0.0.3 18080 端口将数据返回给客户端时，将源 ip 改为 192.168.200.6</span><br><span class="line">iptables -t nat -A POSTROUTING -d 10.0.0.3 -p tcp --dport 18080 -j SNAT --to 192.168.200.6</span><br></pre></td></tr></table></figure>
+<h3 id="iptables和nginx开机启动"><a href="#iptables和nginx开机启动" class="headerlink" title="iptables和nginx开机启动"></a>iptables和nginx开机启动</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">service nginx start    #启动反向代理</span><br><span class="line">chkconfig nginx on    #开机启动反向代理</span><br><span class="line">service iptables start   #启动端口转发</span><br><span class="line">chkconfig iptables on    #开机启动端口转发</span><br></pre></td></tr></table></figure>
+<h3 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">/etc/init.d/iptables start     # 开启防火墙，或者service iptables start，以下同理</span><br><span class="line">/etc/init.d/iptables stop      # 停止防火墙</span><br><span class="line">/etc/init.d/iptables restart   # 重启防火墙</span><br><span class="line">/etc/init.d/iptables status    # 查看端口状态</span><br><span class="line">/etc/init.d/iptables save      # 保存配置</span><br><span class="line">/etc/init.d/iptables -t nat --list    #查看nat状态</span><br><span class="line">/etc/init.d/iptables -t nat -F #清空nat</span><br><span class="line">chkconfig iptables off         # 永久关闭防火墙</span><br><span class="line">chkconfig iptables on          # 永久关闭后启用</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -408,7 +445,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://atxiu.cn/Why.html" title="为什么要建博客">http://atxiu.cn/Why.html</a>
+    <a href="http://atxiu.cn/OpenVPN.html" title="OpenVPN搭建">http://atxiu.cn/OpenVPN.html</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -430,8 +467,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/Lychee.html" rel="next" title="Lychee开源图床搭建">
-                <i class="fa fa-chevron-left"></i> Lychee开源图床搭建
+              <a href="/Why.html" rel="next" title="为什么要建博客">
+                <i class="fa fa-chevron-left"></i> 为什么要建博客
               </a>
             
           </div>
@@ -439,10 +476,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/OpenVPN.html" rel="prev" title="OpenVPN搭建">
-                OpenVPN搭建 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -609,7 +642,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#碎片化时间整理和利用"><span class="nav-number">1.</span> <span class="nav-text">碎片化时间整理和利用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#为什么使用Hexo驱动"><span class="nav-number">2.</span> <span class="nav-text">为什么使用Hexo驱动</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#建博客想法"><span class="nav-number">3.</span> <span class="nav-text">建博客想法</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#服务器端"><span class="nav-number">1.</span> <span class="nav-text">服务器端</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#添加epel源"><span class="nav-number">1.1.</span> <span class="nav-text">添加epel源</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装openvpn-easy-rsa-firewalld"><span class="nav-number">1.2.</span> <span class="nav-text">安装openvpn easy-rsa firewalld</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置easy-rsa"><span class="nav-number">1.3.</span> <span class="nav-text">配置easy-rsa</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#生成服务器证书密钥和客户端证书密钥"><span class="nav-number">1.4.</span> <span class="nav-text">生成服务器证书密钥和客户端证书密钥</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置OpenVPN服务端"><span class="nav-number">1.5.</span> <span class="nav-text">配置OpenVPN服务端</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置firewalld端口转发"><span class="nav-number">1.6.</span> <span class="nav-text">配置firewalld端口转发</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查看防火墙配置"><span class="nav-number">1.7.</span> <span class="nav-text">查看防火墙配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#firewalld和OpenVPN开机启动"><span class="nav-number">1.8.</span> <span class="nav-text">firewalld和OpenVPN开机启动</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#客户端设置"><span class="nav-number">2.</span> <span class="nav-text">客户端设置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装openvpn-iptables"><span class="nav-number">2.1.</span> <span class="nav-text">安装openvpn iptables</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置OpenVPN客户端"><span class="nav-number">2.2.</span> <span class="nav-text">配置OpenVPN客户端</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#客户端做反向代理"><span class="nav-number">2.3.</span> <span class="nav-text">客户端做反向代理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置iptables端口转发"><span class="nav-number">2.4.</span> <span class="nav-text">配置iptables端口转发</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#iptables和nginx开机启动"><span class="nav-number">2.5.</span> <span class="nav-text">iptables和nginx开机启动</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常用命令"><span class="nav-number">2.6.</span> <span class="nav-text">常用命令</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -786,9 +819,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://atxiu.cn/Why.html';
-          this.page.identifier = 'Why.html';
-          this.page.title = '为什么要建博客';
+          this.page.url = 'http://atxiu.cn/OpenVPN.html';
+          this.page.identifier = 'OpenVPN.html';
+          this.page.title = 'OpenVPN搭建';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://atxiu.disqus.com/embed.js';

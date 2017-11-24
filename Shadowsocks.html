@@ -88,7 +88,7 @@
 <meta property="og:description" content="最近吃鸡很火啊，现象级游戏真是可怕，社会社会。不过想要吃鸡呢，得有个好的加速器，现在市面上的加速器个个收费，不然就是绑定各种流氓，像某管家、某60。真是怀念几年前的时光，加速器个个免费，代理一搜一大把，用个花刺畅游世界，还能顺路刷个钻-.-。 扯远了，加速器收费，价格不低，免费的体验差又不想用，干脆自己搭建一个。">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://atxiu.cn/Snipaste/Snipaste_2017-11-14_14-01-08.png">
-<meta property="og:updated_time" content="2017-11-22T04:18:35.867Z">
+<meta property="og:updated_time" content="2017-11-24T07:50:44.495Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CentOS 7系统搭建Shadowsocks-libev服务器，兼容绝地求生，愉快吃鸡">
 <meta name="twitter:description" content="最近吃鸡很火啊，现象级游戏真是可怕，社会社会。不过想要吃鸡呢，得有个好的加速器，现在市面上的加速器个个收费，不然就是绑定各种流氓，像某管家、某60。真是怀念几年前的时光，加速器个个免费，代理一搜一大把，用个花刺畅游世界，还能顺路刷个钻-.-。 扯远了，加速器收费，价格不低，免费的体验差又不想用，干脆自己搭建一个。">
@@ -457,7 +457,7 @@
 </ul>
 <h2 id="防火墙设置"><a href="#防火墙设置" class="headerlink" title="防火墙设置"></a>防火墙设置</h2><p>如果开启了防火墙，需要放通Shadowsocks-libev端口</p>
 <p>例如，对于Firewall，执行：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --permanent --add-port=8388/tcp</span><br><span class="line">firewall-cmd --permanent --add-port=8388/udp</span><br><span class="line">firewall-cmd --reload</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --permanent --zone=public --add-port=8388/tcp</span><br><span class="line">firewall-cmd --permanent --zone=public --add-port=8388/udp</span><br><span class="line">firewall-cmd --reload</span><br></pre></td></tr></table></figure>
 <h2 id="加入开启启动，以及启动服务、查看状态"><a href="#加入开启启动，以及启动服务、查看状态" class="headerlink" title="加入开启启动，以及启动服务、查看状态"></a>加入开启启动，以及启动服务、查看状态</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">systemctl enable shadowsocks</span><br><span class="line">systemctl start shadowsocks</span><br><span class="line">systemctl status shadowsocks</span><br></pre></td></tr></table></figure>
 <h2 id="取消开启启动，以及停止服务"><a href="#取消开启启动，以及停止服务" class="headerlink" title="取消开启启动，以及停止服务"></a>取消开启启动，以及停止服务</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">systemctl disable shadowsocks</span><br><span class="line">systemctl stop shadowsocks</span><br></pre></td></tr></table></figure>
 <h2 id="测试效果"><a href="#测试效果" class="headerlink" title="测试效果"></a>测试效果</h2><p><img src="//atxiu.cn/Snipaste/Snipaste_2017-11-14_14-01-08.png" alt="Snipaste_2017-11-14_14-01-08"></p>
@@ -622,7 +622,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
