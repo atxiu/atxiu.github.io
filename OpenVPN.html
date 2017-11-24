@@ -85,12 +85,12 @@
 <meta property="og:title" content="OpenVPN搭建管道为内网地址映射公网端口">
 <meta property="og:url" content="http://atxiu.cn/OpenVPN.html">
 <meta property="og:site_name" content="Anjoy博客">
-<meta property="og:description" content="近日工作上有这样一个需求，某学校没有公网地址，但公司的业务对接需要公网地址的一个端口，而这边另一个学校有公网地址，可做映射。要求是在不影响业务正常运行的情况下实现本次映射。对端对接地址是：10.0.0.2 提供了一台可操作服务器 10.0.0.3 ，本地我提供了可操作服务器：10.100.101.115，公网 nat 映射一应俱全。仔细思考过后，决定使用OpenVPN。实现如下： 服务器端添加ep">
+<meta property="og:description" content="近日工作上有这样一个需求，某学校没有公网地址，但公司的业务对接需要公网地址的一个端口，而这边另一个学校有公网地址，可做映射。要求是在不影响业务正常运行的情况下实现本次映射。对端对接地址是：10.0.0.2 提供了一台可操作服务器 10.0.0.3 ，本地我提供了可操作服务器：10.100.101.115，公网 nat 映射一应俱全。仔细思考过后，决定使用OpenVPN。实现如下：">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2017-11-24T07:58:33.847Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="OpenVPN搭建管道为内网地址映射公网端口">
-<meta name="twitter:description" content="近日工作上有这样一个需求，某学校没有公网地址，但公司的业务对接需要公网地址的一个端口，而这边另一个学校有公网地址，可做映射。要求是在不影响业务正常运行的情况下实现本次映射。对端对接地址是：10.0.0.2 提供了一台可操作服务器 10.0.0.3 ，本地我提供了可操作服务器：10.100.101.115，公网 nat 映射一应俱全。仔细思考过后，决定使用OpenVPN。实现如下： 服务器端添加ep">
+<meta name="twitter:description" content="近日工作上有这样一个需求，某学校没有公网地址，但公司的业务对接需要公网地址的一个端口，而这边另一个学校有公网地址，可做映射。要求是在不影响业务正常运行的情况下实现本次映射。对端对接地址是：10.0.0.2 提供了一台可操作服务器 10.0.0.3 ，本地我提供了可操作服务器：10.100.101.115，公网 nat 映射一应俱全。仔细思考过后，决定使用OpenVPN。实现如下：">
 
 
 
@@ -380,6 +380,7 @@
 
       
         <p>近日工作上有这样一个需求，某学校没有公网地址，但公司的业务对接需要公网地址的一个端口，而这边另一个学校有公网地址，可做映射。要求是在不影响业务正常运行的情况下实现本次映射。对端对接地址是：10.0.0.2 提供了一台可操作服务器 10.0.0.3 ，本地我提供了可操作服务器：10.100.101.115，公网 nat 映射一应俱全。仔细思考过后，决定使用OpenVPN。实现如下：</p>
+<a id="more"></a>
 <h2 id="服务器端"><a href="#服务器端" class="headerlink" title="服务器端"></a>服务器端</h2><h3 id="添加epel源"><a href="#添加epel源" class="headerlink" title="添加epel源"></a>添加epel源</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">yum install epel-release</span><br><span class="line">yum cleanall # 可选</span><br><span class="line">yum update # 可选</span><br><span class="line">yum makecache # 可选</span><br></pre></td></tr></table></figure>
 <h3 id="安装openvpn-easy-rsa-firewalld"><a href="#安装openvpn-easy-rsa-firewalld" class="headerlink" title="安装openvpn easy-rsa firewalld"></a>安装openvpn easy-rsa firewalld</h3><p>任选其一，以防火墙为基础的端口转发</p>
 <ul>
